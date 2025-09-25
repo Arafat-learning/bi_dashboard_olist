@@ -1,0 +1,14 @@
+services:
+  pipeline:
+    build: ./pipeline
+    volumes:
+      - ./data:/app/data:ro
+      - ./kpis:/app/kpis
+      - ./pipeline:/app
+    # Run once to generate KPIs
+
+  web:
+    build: ./visual
+    volumes:
+      - ./kpis:/app/kpis:ro
+    # Read precomputed data
