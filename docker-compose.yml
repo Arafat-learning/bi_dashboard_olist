@@ -7,8 +7,14 @@ services:
       - ./pipeline:/app
     # Run once to generate KPIs
 
-  web:
+  visual:
     build: ./visual
+    ports: 
+      - "3000:3000"
     volumes:
       - ./kpis:/app/kpis:ro
-    # Read precomputed data
+      - ./visual:/app
+      - /app/node_modules
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    # Read precomputed data and visualize
