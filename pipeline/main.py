@@ -1,18 +1,13 @@
 ## Import libraries
 import polars as pl
+from src import data_loader
 
 ## Read datafiles
-print("Loading orders data...")
-orders = pl.read_csv(source = "data/orders.csv",
-           schema_overrides = {"order_purchase_timestamp": pl.Datetime,
-                               "order_approved_at": pl.Datetime,
-                               "order_delivered_carrier_date": pl.Datetime,
-                               "order_delivered_customer_date": pl.Datetime,
-                               "order_estimated_delivery_date": pl.Datetime})
+# Load orders dataset
+orders = data_loader.get_orders()
 
-print("Loading items data...")
-items = pl.read_csv(source = "data/order_items.csv",
-                    schema_overrides = {"shipping_limit_date": pl.Datetime})
+# Load order_items dataset
+items = data_loader.get_items()
 
 ## Extract monthly sales
 # Join tables
