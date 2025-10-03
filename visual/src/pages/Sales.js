@@ -40,10 +40,23 @@ function Sales() {
             <Tooltip />
             <Legend />
             <Line type="monotone" dataKey="sales" stroke="#82ca9d" strokeWidth={2} />
-            <Line type="monotone" dataKey="growth" stroke="#8884d8" strokeWidth={2} />
           </LineChart>
         </ResponsiveContainer>
       </div>
+      <div style={{ marginTop: '30px' }}>
+        <h2>Monthly change in sales</h2>
+        <ResponsiveContainer width="100%" height={400}>
+          <LineChart data={salesData}>
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey= "month" />
+            <YAxis />
+            <Tooltip />
+            <Legend />
+            <Line type="monotone" dataKey="growth" stroke="#82ca9d" strokeWidth={2} />
+          </LineChart>
+        </ResponsiveContainer>
+      </div>
+
     </div>
   );
 }

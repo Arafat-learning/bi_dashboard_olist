@@ -17,10 +17,16 @@ def get_sales(items, orders):
     monthly_sales = (sales.group_by(["year", "month"])
                           .agg(pl.col("freight_value")
                           .sum()
-                          .alias("sales")))
+                          .alias("sales"))
+                          .sort(["year", "month"]))
+    # Change month specification from numeric into words
+    monthly_sales = (monthly_sales.with_columns(
+                         pl.date(2018, pl.col("month"), 1)
+                         .dt.strftime("%B")
+                         .alias("month")))
     # Add monthly change in sales
     monthly_sales = monthly_sales.with_columns(
             pl.col("sales").diff()
-            .alias("growth")) 
+            .alias("growth"))
 
     return monthly_sales
