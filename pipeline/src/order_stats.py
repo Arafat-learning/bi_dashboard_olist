@@ -18,8 +18,8 @@ def get_order_stats(items):
                                   .get_column("order_item_id").mean())
 
     # store kpis in dictionary
-    order_stats["order_spending"] = average_order_spending
-    order_stats["avg_item_count"] = average_item_in_order
+    order_stats["order_spending"] = round(average_order_spending, 1)
+    order_stats["avg_item_count"] = round(average_item_in_order, 1)
 
     return order_stats
 
