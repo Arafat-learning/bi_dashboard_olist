@@ -3,6 +3,7 @@ import polars as pl
 from src import data_loader
 from src import sales
 from src import operations
+from src import order_stats
 
 ## Read datafiles
 # Load orders dataset
@@ -16,6 +17,8 @@ items = data_loader.get_items()
 monthly_sales = sales.get_sales(items, orders)
 # Operations
 delivery = operations.get_operations(orders)
+# Customers
+average_order = order_stats.get_order_stats(items)
 
 ## Write kpis into jsonfiles 
 # Sales
@@ -26,3 +29,6 @@ monthly_sales.write_json("kpis/sales.json")
 # Operations
 print("Writing operations into json...")
 operations.write_json(delivery, path = "kpis/operations.json")
+# Orders
+print("Writing statistics about order in json...")
+order_stats.write_json(average_order, path = "kpis/order_stat.json")
