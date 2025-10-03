@@ -5,7 +5,7 @@ const NavBar = () => {
   const location = useLocation();
 
   const navItems = [
-    { path: '/product', label: 'Product', color: '#8884d8' },
+    { path: '/product', label: 'Order', color: '#8884d8' },
     { path: '/sales', label: 'Sales', color: '#82ca9d' },
     { path: '/operations', label: 'Operations', color: '#ffc658' }
   ];
