@@ -14,7 +14,7 @@ function App() {
         <main className="main-content">
           <Routes>
             {/* Default route redirects to Product */}
-            <Route path="/" element={<Navigate to="/product" replace />} />
+            <Route path="/" element={<Navigate to="/sales" replace />} />
             
             {/* Department routes */}
             <Route path="/product" element={<Product />} />
@@ -22,7 +22,7 @@ function App() {
             <Route path="/operations" element={<Operations />} />
             
             {/* Catch-all route for 404 */}
-            <Route path="*" element={<Navigate to="/product" replace />} />
+            <Route path="*" element={<Navigate to="/sales" replace />} />
           </Routes>
         </main>
       </div>
