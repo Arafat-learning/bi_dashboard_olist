@@ -1,12 +1,13 @@
 #### Introduction
-In this project I will create dashboard with KPIs for e-commerce giant olist using open source data in Kaggle.  
+In this project I created KPI dashboard for e-commerce giant olist.  
+I used openly available data in Kaggle.  
 
 #### Set up
-You first clone the project into your local machine
-``` bash
+First clone the project into your local machine
+``` 
 git clone https://github.com/Arafat-learning/bi_dashboard_olist.git
 ```
-Afterward build the docker image
+Afterwards build the the docker images from dockerfiles 
 ```
 docker-compose build
 ```
@@ -15,7 +16,8 @@ Then run the containers
 docker-compose up
 ```
 
-This project will consist of the following folders:
+This project consists of the following folders:
 * **Data**: contains all the data
-* **Pipeline**: processes raw data for visualizations
-* **Front**: creates easy webpage to visualize the KPI's
+* **Notebooks** contain my drafts and thought process while building pipeline
+* **Pipeline**: processes raw data to calculate all the KPI's.
+* **visual**: creates easy webpage to visualize the KPI's
