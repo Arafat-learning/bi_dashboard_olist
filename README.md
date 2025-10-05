@@ -1,6 +1,6 @@
 #### Introduction
-In this project I created KPI dashboard for e-commerce giant olist.  
-I used openly available data in Kaggle.  
+In this project I created KPI dashboard for Olist, Brazillian e-commerce giant   
+I used openly available data in Kaggle. Link: https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce 
 
 #### Set up
 First clone the project into your local machine
@@ -19,5 +19,5 @@ docker-compose up
 This project consists of the following folders:
 * **Data**: contains all the data
 * **Notebooks** contain my drafts and thought process while building pipeline
-* **Pipeline**: processes raw data to calculate all the KPI's.
-* **visual**: creates easy webpage to visualize the KPI's
+* **Pipeline**: processes raw data to calculate all the KPI's
+* **visual**: runs simple webpage to visualize the KPI's
